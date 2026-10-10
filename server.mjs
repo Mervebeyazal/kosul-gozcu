@@ -27,4 +27,16 @@ app.post('/analyze',async(req,res)=>{
  }catch(e){res.status(422).json({error:e.message});}
 });
 export {app};
-if(process.argv[1]===fileURLToPath(import.meta.url))app.listen(4317,'127.0.0.1',()=>console.log('Koşul Gözcü: http://127.0.0.1:4317'));
+if(process.argv[1]===fileURLToPath(import.meta.url)){
+ app.listen(4317,'127.0.0.1',(error)=>{
+  if(error){
+   console.error(error.code==='EADDRINUSE'
+    ?'Servis başlatılamadı: 4317 portu başka bir işlem tarafından kullanılıyor. Önce çalışan eski Koşul Gözcü servisini durdurun.'
+    :`Servis başlatılamadı (${error.code||'bilinmeyen hata'}): ${error.message}`);
+   process.exitCode=1;
+   return;
+  }
+  console.log('Koşul Gözcü: http://127.0.0.1:4317');
+  console.log('Servis açık. Bu pencereyi kapatmayın; durdurmak için Ctrl+C.');
+ });
+}
