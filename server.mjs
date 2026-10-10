@@ -1,5 +1,6 @@
 import express from 'express';
 import {randomBytes,timingSafeEqual} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 import {schema,verify,baseline} from './src/core.js';
 const app=express();const token=randomBytes(24).toString('hex');
 app.use((req,res,next)=>{
@@ -31,4 +32,5 @@ app.post('/analyze',async(req,res)=>{
   res.json({...verify(candidate,text,{partial}),mode:mode==='demo'?'demo':'llm'});
  }catch(e){res.status(422).json({error:e.message});}
 });
-app.listen(4317,'127.0.0.1',()=>console.log('Koşul Gözcü: http://127.0.0.1:4317'));
+export {app};
+if(process.argv[1]===fileURLToPath(import.meta.url))app.listen(4317,'127.0.0.1',()=>console.log('Koşul Gözcü: http://127.0.0.1:4317'));
