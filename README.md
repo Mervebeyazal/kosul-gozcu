@@ -4,9 +4,9 @@ Chrome MV3 uzantısı: görünür kullanım/abonelik metnini yakalar, şemalı L
 
 ## Teslim durumu
 
-- Uzantı paketi ve yerel analiz servisi hazır; build ve çekirdek testleri çalıştırıldı.
+- Uzantı paketi ve yerel analiz servisi hazır. Kullanıcı Chrome'da gerçek GitHub metnini kendi Groq anahtarıyla analiz etti ve JSON indirdi; alıntılar doğrulandı.
 - 5 gerçek ToS snapshot'ı üzerinde mini eval: `eval/REPORT.md`. Bu eval **demo baseline** içindir; canlı LLM evali değildir.
-- Groq bağlantısı ve canlı injection denemeleri çalıştırıldı; sonuçlar eval/LLM-REPORT.md içinde. Alibaba demo servisi kullanılmaz.
+- Son sürümde dört canlı injection/belirsizlik testi geçti. Beş gerçek ToS'tan seçilmiş 24 çapada 18 yakalanan, 6 kaçırılan; ek incelemede 3 yanlış alarm ve 4 desteklenen bulgu: eval/LIVE-SUMMARY.md. Alibaba demo servisi kullanılmaz.
 - Cypress senaryosu mutlu yol, gizli injection ve dürüst belirsizlik anını içerir. Windows çalıştırma sonucu `SECURITY.md` / `DELIVERY.md` içinde belirtilir. MP4 dosyası yoksa kayıt teslim edilmiş sayılmaz.
 - GitHub deposu: https://github.com/Mervebeyazal/kosul-gozcu. İlk CI koşusu ve ≤90sn demo video kontrolü geçti.
 
@@ -51,7 +51,7 @@ Metin nav/header/footer, script/style, gizli alanlar ve form kontrollerinden ar�
 
 ## Çıktı sözleşmesi
 
-Model yalnızca {uncertain, risks:[{category, evidence_id}]} JSON üretir. Dinamik JSON şeması kanıt kimliklerini mevcut blokların ID değerleriyle sınırlar; Ajv aynı şemayı yeniden doğrular. Model serbest alıntı veya açıklama üretemez. Kod seçilen bloğun metnini doğrudan kaynaktan kopyalar, ardından src/core.js rapor şeması ve birebir kaynak/offset doğrulamasını yapar. Kaynakta bulunmayan kimlik veya alıntı tüm raporu reddettirir. Bloklar en çok 1.200 karakterdir; parçalar arasında bağlam kaybı olabilir. Offsetler JavaScript UTF-16 birimleridir. Eşit alıntının ilk geçtiği yer kullanılır.
+Model yalnızca {uncertain, risks:[{category, evidence_id}]} JSON üretir. Dinamik JSON şeması kanıt kimliklerini mevcut blokların ID değerleriyle sınırlar; Ajv aynı şemayı yeniden doğrular. Model serbest alıntı veya açıklama üretemez. Kod seçilen bloğun metnini doğrudan kaynaktan kopyalar, ardından src/core.js rapor şeması ve birebir kaynak/offset doğrulamasını yapar. Kaynakta bulunmayan kimlik veya alıntı tüm raporu reddettirir. Bloklar en çok 1.400 karakterdir; parçalar arasında bağlam kaybı olabilir. Offsetler JavaScript UTF-16 birimleridir. Eşit alıntının ilk geçtiği yer kullanılır.
 
 Skor modelden alınmaz: kategori ağırlıkları 18/16/22/14/14/16, kategori başına bir kez, üst sınır 100. Skor hukuki olasılık, zarar tutarı veya hukuki geçerlilik tahmini değildir. Belirsizlik veya kısmi kapsam varsa kesin skor yoktur; gözlenen ağırlık ayrı JSON alanıdır. Türkçe açıklamalar modelin serbest metni yerine sabit, ihtiyatlı kategori açıklamalarıdır. Alıntı varlığı semantik doğruluğu ispatlamaz; bu sınır UI'da ve evalde belirtilir.
 
@@ -91,7 +91,7 @@ git remote add origin https://github.com/mervebeyazal/kosul-gozcu.git
 git push -u origin main
 ```
 
-Tam belge coverage evali, bağımsız gold anotasyon ve Chrome'da uzantı kabul testi tamamlanmadan üretim için hazır sayılmamalıdır. Gizlilik metinlerinde veri satışı, sınır ötesi aktarım ve saklama süresi kategorileri bu MVP'de bulunmaz.
+Tam belge coverage evali ve bağımsız gold anotasyon tamamlanmadan üretim için hazır sayılmamalıdır. Gizlilik metinlerinde veri satışı, sınır ötesi aktarım ve saklama süresi kategorileri bu MVP'de bulunmaz.
 
 ### Raporu geri açma ve terminal kullanımı
 
@@ -101,4 +101,4 @@ Uzantıdaki **Son raporu aç** düğmesi, çalışan yerel servis oturumunun son
 
 Kısa numaralı başlıklar deterministik olarak risk listesinden çıkarılır; `suppressed` alanında nedeni korunur ve skor belirsiz bırakılır. Bu dar filtre tüm başlıkları veya anlam hatalarını yakalamaz. Groq beklemeleri ve parça ilerlemesi UI ve terminalde gösterilir; büyük metinlerde birkaç dakika bekleme hâlâ mümkündür.
 
-Kanıt blokları artık DOM'un kısa satırlarını kesintisiz kaynak pencerelerinde (en fazla 1.400 karakter) birleştirir. Alıntı metni yeniden yazılmaz. Sadece sona erme sonrasındaki hükümlerin yürürlükte kalmasını ifade eden İngilizce `survive termination` adayları, aynı kanıtta sağlayıcı yetkisi yoksa bastırılır ve belirsizlik korunur. Bu dar anlamsal kontrol diğer dilleri veya tüm yanlış sınıflandırmaları kapsamaz. Bloklama değişikliği için yerel regresyonlar geçti; önceki canlı eval sonuçları önceki sürüme aittir, yeni sürümün canlı model kalitesini kanıtlamaz.
+Kanıt blokları artık DOM'un kısa satırlarını kesintisiz kaynak pencerelerinde (en fazla 1.400 karakter) birleştirir. Alıntı metni yeniden yazılmaz. Sadece sona erme sonrasındaki hükümlerin yürürlükte kalmasını ifade eden İngilizce `survive termination` adayları, aynı kanıtta sağlayıcı yetkisi yoksa bastırılır ve belirsizlik korunur. Bu dar anlamsal kontrol diğer dilleri veya tüm yanlış sınıflandırmaları kapsamaz. Yeni sürüm canlı parça evali `eval/LIVE-SUMMARY.md` içinde; önceki sonuçlar `PREVIOUS-LLM-*` dosyalarında korunur.
