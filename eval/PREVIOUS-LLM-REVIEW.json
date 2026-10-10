@@ -1,0 +1,118 @@
+{
+  "reviewer": "Implementer; not independent legal ground truth",
+  "run": "2026-10-10T11:14:06.390Z",
+  "decisions": [
+    {
+      "document": "github",
+      "category": "no_refund",
+      "start": 89,
+      "supported": false,
+      "reason": "Yalnızca bölüm başlığı; iade hükmü yok."
+    },
+    {
+      "document": "github",
+      "category": "termination",
+      "start": 1038,
+      "supported": false,
+      "reason": "Yalnızca bölüm başlığı; fesih yetkisinin içeriği yok."
+    },
+    {
+      "document": "github",
+      "category": "liability",
+      "start": 1330,
+      "supported": false,
+      "reason": "Hükümlerin sona ermeden sonra devamı; sorumluluk sınırı hükmü değil."
+    },
+    {
+      "document": "github",
+      "category": "unilateral_change",
+      "start": 2522,
+      "supported": false,
+      "reason": "Tanımları açıklayan giriş; değişiklik yetkisi değil."
+    },
+    {
+      "document": "github",
+      "category": "unilateral_change",
+      "start": 2646,
+      "supported": true,
+      "reason": "Özet de olsa değişiklik yetkisi ve bildirim koşulu var."
+    },
+    {
+      "document": "spotify",
+      "category": "termination",
+      "start": 280,
+      "supported": false,
+      "reason": "Ön ödemeli kodun süresinin bitmesi; sağlayıcının takdiri fesih yetkisi değil."
+    },
+    {
+      "document": "spotify",
+      "category": "termination",
+      "start": 512,
+      "supported": true,
+      "reason": "Sağlayıcının 14 gün bildirimle aboneliği sonlandırma yetkisi var."
+    },
+    {
+      "document": "spotify",
+      "category": "liability",
+      "start": 1892,
+      "supported": false,
+      "reason": "Yalnızca başlık; sorumluluk sınırı açıklanmıyor."
+    },
+    {
+      "document": "spotify",
+      "category": "arbitration",
+      "start": 3214,
+      "supported": true,
+      "reason": "Bireysel zorunlu tahkim ve toplu dava kısıtlamasını açıkça bildiren özet."
+    },
+    {
+      "document": "dropbox",
+      "category": "auto_renewal",
+      "start": 882,
+      "supported": false,
+      "reason": "İptal/iade ve fiyat metninde otomatik yenileme hükmü yok."
+    },
+    {
+      "document": "dropbox",
+      "category": "no_refund",
+      "start": 882,
+      "supported": true,
+      "reason": "İade yalnızca hukuken zorunlu olduğunda verilir; yerel hukuk istisnası var."
+    },
+    {
+      "document": "dropbox",
+      "category": "auto_renewal",
+      "start": 2646,
+      "supported": false,
+      "reason": "Yenilemedeki fiyat değişikliği otomatik yenileme kanıtı değil."
+    },
+    {
+      "document": "dropbox",
+      "category": "unilateral_change",
+      "start": 2646,
+      "supported": true,
+      "reason": "Yenilemede ücret değişikliği yetkisi ve 30 gün bildirim var."
+    },
+    {
+      "document": "zoom",
+      "category": "unilateral_change",
+      "start": 1355,
+      "supported": true,
+      "reason": "Tek taraflı fiyat değişikliği ve bildirim hükmü."
+    },
+    {
+      "document": "zoom",
+      "category": "arbitration",
+      "start": 1964,
+      "supported": true,
+      "reason": "Bağlayıcı tahkim ve toplu/temsili dava feragati hükmü mevcut."
+    },
+    {
+      "document": "zoom",
+      "category": "liability",
+      "start": 3550,
+      "supported": false,
+      "reason": "Yalnızca başlık; sorumluluk sınırı hükmü yok."
+    }
+  ]
+}

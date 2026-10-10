@@ -1,0 +1,739 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "at": "2026-10-10T11:14:06.390Z",
+  "scope": "24 selected clause excerpts from 5 real ToS. NOT full-document coverage evaluation. Gold locations inform excerpt selection; selection bias.",
+  "matching": "Unmatched predictions require review; they are NOT automatically false positives.",
+  "rows": [
+    {
+      "id": "github",
+      "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "finalUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "chars": 45644,
+      "sha256": "2533fd8ad6f7820ffa7ba3c2a2ad3289dcd63534f1327304ce33f9b31f6ea8d8",
+      "capturedAt": "2026-10-10T08:36:06.343Z",
+      "scope": "selected annotated excerpts",
+      "analyzedChars": 3526,
+      "report": {
+        "score": null,
+        "observedScore": 60,
+        "risks": [
+          {
+            "category": "no_refund",
+            "quote": "3. Billing Schedule; No Refunds",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 89,
+            "end": 120
+          },
+          {
+            "category": "no_refund",
+            "quote": "Payment Based on Plan For monthly or yearly payment plans, the Service is billed in advance on a monthly or yearly basis respectively and is non-refundable. There will be no refunds or credits for partial months of service, downgrade refunds, or refunds for months unused with an open Account; however, the service will remain active for the length of the paid billing period. In order to treat everyone equally, no exceptions will be made.",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 121,
+            "end": 561
+          },
+          {
+            "category": "termination",
+            "quote": "3. GitHub May Terminate",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 1038,
+            "end": 1061
+          },
+          {
+            "category": "termination",
+            "quote": "GitHub has the right to suspend or terminate your access to all or any part of the Website at any time, with or without cause, with or without notice, effective immediately. GitHub reserves the right to refuse service to anyone for any reason at any time.",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 1062,
+            "end": 1317
+          },
+          {
+            "category": "liability",
+            "quote": "All provisions of this Agreement which, by their nature, should survive termination will survive termination — including, without limitation: ownership provisions, warranty disclaimers, indemnity, and limitations of liability.",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 1330,
+            "end": 1556
+          },
+          {
+            "category": "liability",
+            "quote": "ide our service as is, and we make no promises or guarantees about this service. Please read this section carefully; you should understand what to expect.P. Limitation of LiabilityWe will not be liable for damages or losses arising from your use or inability to use the service or otherwise arising under this agreement. Please read this section carefully; it limits our obligations to you.Q. Release and IndemnificationYou are fully responsible for your use of the service.R. Changes to these Terms of ServiceWe may modify this agreement, but we will give you 30 days' notice of material changes.S. MiscellaneousPlease see this section for legal details including our choice of law.",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 1764,
+            "end": 2447
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "Short version: We use these basic terms throughout the agreement, and they have specific meanings. You should know what we",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 2522,
+            "end": 2644
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "t want to bother you every time we fix a typo. So while we may modify this agreement at any time, we will notify users of any material changes and give you time to adjust to them.",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 2646,
+            "end": 2825
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "We reserve the right, at our sole discretion, to amend these Terms of Service at any time and will update these Terms of Service in the event of any such amendments. We will notify our Users of material changes to this Agreement, such as price increases, at least 30 days prior to the change taking effect by posting a notice on our Website or sending email to the primary email address specified in your GitHub account. Customer's continued use of the Service after those 30 days constitutes agreement to those revisions of this Agreement. For any other modifications, your continued use of the Website constitutes agreement to our revisions of these Terms of Service. You can view all changes to th",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 2826,
+            "end": 3526
+          }
+        ],
+        "uncertain": true,
+        "disclaimer": "Bu uygulama hukuki tavsiye vermez.",
+        "note": "Alıntının doğrulanması, yorumun hukuken doğru olduğunu kanıtlamaz. Risk bulunmaması güvenli olduğu anlamına gelmez.",
+        "mode": "llm",
+        "model": "openai/gpt-oss-20b",
+        "chunks": 1
+      },
+      "hits": [
+        {
+          "category": "no_refund",
+          "anchor": "the Service is billed in advance",
+          "start": 180,
+          "end": 212
+        },
+        {
+          "category": "termination",
+          "anchor": "GitHub has the right to suspend",
+          "start": 1062,
+          "end": 1093
+        },
+        {
+          "category": "liability",
+          "anchor": "We will not be liable for damages",
+          "start": 1944,
+          "end": 1977
+        },
+        {
+          "category": "unilateral_change",
+          "anchor": "We reserve the right, at our sole discretion, to amend",
+          "start": 2826,
+          "end": 2880
+        }
+      ],
+      "misses": [],
+      "unmatched": [
+        {
+          "category": "no_refund",
+          "quote": "3. Billing Schedule; No Refunds",
+          "title": "İade kısıtlaması",
+          "weight": 16,
+          "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+          "start": 89,
+          "end": 120
+        },
+        {
+          "category": "termination",
+          "quote": "3. GitHub May Terminate",
+          "title": "Hesap / hizmet sonlandırma",
+          "weight": 14,
+          "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+          "start": 1038,
+          "end": 1061
+        },
+        {
+          "category": "liability",
+          "quote": "All provisions of this Agreement which, by their nature, should survive termination will survive termination — including, without limitation: ownership provisions, warranty disclaimers, indemnity, and limitations of liability.",
+          "title": "Sorumluluk sınırı",
+          "weight": 16,
+          "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+          "start": 1330,
+          "end": 1556
+        },
+        {
+          "category": "unilateral_change",
+          "quote": "Short version: We use these basic terms throughout the agreement, and they have specific meanings. You should know what we",
+          "title": "Tek taraflı değişiklik",
+          "weight": 14,
+          "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+          "start": 2522,
+          "end": 2644
+        },
+        {
+          "category": "unilateral_change",
+          "quote": "t want to bother you every time we fix a typo. So while we may modify this agreement at any time, we will notify users of any material changes and give you time to adjust to them.",
+          "title": "Tek taraflı değişiklik",
+          "weight": 14,
+          "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+          "start": 2646,
+          "end": 2825
+        }
+      ]
+    },
+    {
+      "id": "spotify",
+      "url": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "finalUrl": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "chars": 55033,
+      "sha256": "a13a37642291f17a6e9aada8e8a83a3ee90f2191d88b1ddc37cdc5949690ae3f",
+      "capturedAt": "2026-10-10T08:36:07.438Z",
+      "scope": "selected annotated excerpts",
+      "analyzedChars": 4408,
+      "report": {
+        "score": 68,
+        "observedScore": 68,
+        "risks": [
+          {
+            "category": "no_refund",
+            "quote": "t from the end of the billing period in which you cancel and you will be downgraded to the free version of the Spotify Service. Unless otherwise required by law, we do not provide refunds or credits for any partial subscription periods, except as expressly stated in these Terms.",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 0,
+            "end": 279
+          },
+          {
+            "category": "termination",
+            "quote": "If you have purchased a Paid Subscription using a Code, your subscription will automatically terminate at the end of the period stated with your Code, or when there is an insufficient prepaid balance to pay for the Spotify Service.",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 280,
+            "end": 511
+          },
+          {
+            "category": "termination",
+            "quote": "In addition to, and notwithstanding, any other rights we may have under these Terms, we reserve the right to terminate a Paid Subscription at any time, on no less than 14 days' notice to you. Unless we inform you otherwise, we will allow you to retain access to the Paid Subscription for the remainder of the then-current billing period, after which we will downgrade ",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 512,
+            "end": 880
+          },
+          {
+            "category": "termination",
+            "quote": "These Terms will continue to apply to you until terminated by either you or Spotify. Spotify may terminate these Terms (including any additional terms and conditions incorporated herein) or suspend your access to the Spotify Service at any time if we believe you have breached any of these Terms, if we stop providing the Spotify Service or any material component thereof, or as we believe necessary to comply with applicable law. If you or Spotify terminate these Terms, or if Spotify suspends your access to the Spotify Service, you agree that Spotify shall have no liability or responsibility to you, and (except as expressly provided in these Terms) Spotify will not refund any amounts that you have already paid. You may terminate these Terms at any time, in which case you may not contin",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 969,
+            "end": 1762
+          },
+          {
+            "category": "liability",
+            "quote": "Limitation of liability and time for filing a claim",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 1892,
+            "end": 1943
+          },
+          {
+            "category": "liability",
+            "quote": "YOU AGREE THAT YOUR SOLE AND EXCLUSIVE REMEDY FOR ANY PROBLEMS OR DISSATISFACTION WITH THE SPOTIFY SERVICE IS TO UNINSTALL ANY SPOTIFY SOFTWARE AND TO STOP USING THE SPOTIFY SERVICE. YOU AGREE THAT SPOTIFY HAS NO OBLIGATION OR LIABILITY ARISING FROM OR RELATED TO THIRD-PARTY APPLICATIONS OR THE CONTENT THEREOF MADE AVAILABLE THROUGH OR IN CONNECTION WITH THE SPOTIFY SERVICE, AND WHILE YOUR RELATIONSHIP WITH SUCH THIRD-PARTY APPLICATIONS MAY BE GOVERNED BY SEPARATE AGREEMENTS WITH SUCH THIRD PARTIES, YOUR SOLE AND EXCLUSIVE REMEDY, AS WITH RESPECT TO SPOTIFY, FOR ANY PROBLEMS OR DISSATISFACTION WITH ANY THIRD-PARTY APPLICATIONS OR THE CONTENT THEREOF, IS TO UNINSTALL OR STOP USING SUCH THIRD-",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 1944,
+            "end": 2644
+          },
+          {
+            "category": "arbitration",
+            "quote": "THESE TERMS CONTAIN A MANDATORY ARBITRATION PROVISION THAT, AS FURTHER SET FORTH IN SECTION 6 BELOW, REQUIRES THE USE OF ARBITRATION ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES, RATHER THAN JURY TRIALS OR ANY OTHER COURT PROCEEDINGS, OR CLASS ACTIONS OF ANY KIND. IN ARBITRATION THERE IS LESS DISCOVERY AND APPELL",
+            "title": "Tahkim / toplu dava kısıtlaması",
+            "weight": 22,
+            "explanation": "Uyuşmazlık çözüm yolu veya toplu dava imkânı sınırlanabilir.",
+            "start": 3214,
+            "end": 3526
+          }
+        ],
+        "uncertain": false,
+        "disclaimer": "Bu uygulama hukuki tavsiye vermez.",
+        "note": "Alıntının doğrulanması, yorumun hukuken doğru olduğunu kanıtlamaz. Risk bulunmaması güvenli olduğu anlamına gelmez.",
+        "mode": "llm",
+        "model": "openai/gpt-oss-20b",
+        "chunks": 1
+      },
+      "hits": [
+        {
+          "category": "no_refund",
+          "anchor": "refunds or credits for any partial subscription periods",
+          "start": 180,
+          "end": 235
+        },
+        {
+          "category": "termination",
+          "anchor": "may terminate these Terms (including",
+          "start": 1062,
+          "end": 1098
+        },
+        {
+          "category": "liability",
+          "anchor": "YOU AGREE THAT YOUR SOLE AND EXCLUSIVE REMEDY",
+          "start": 1944,
+          "end": 1989
+        }
+      ],
+      "misses": [
+        {
+          "category": "unilateral_change",
+          "anchor": "may change these Terms",
+          "start": 2826,
+          "end": 2848
+        },
+        {
+          "category": "arbitration",
+          "anchor": "class action waiver, and jury trial waiver",
+          "start": 3708,
+          "end": 3750
+        }
+      ],
+      "unmatched": [
+        {
+          "category": "termination",
+          "quote": "If you have purchased a Paid Subscription using a Code, your subscription will automatically terminate at the end of the period stated with your Code, or when there is an insufficient prepaid balance to pay for the Spotify Service.",
+          "title": "Hesap / hizmet sonlandırma",
+          "weight": 14,
+          "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+          "start": 280,
+          "end": 511
+        },
+        {
+          "category": "termination",
+          "quote": "In addition to, and notwithstanding, any other rights we may have under these Terms, we reserve the right to terminate a Paid Subscription at any time, on no less than 14 days' notice to you. Unless we inform you otherwise, we will allow you to retain access to the Paid Subscription for the remainder of the then-current billing period, after which we will downgrade ",
+          "title": "Hesap / hizmet sonlandırma",
+          "weight": 14,
+          "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+          "start": 512,
+          "end": 880
+        },
+        {
+          "category": "liability",
+          "quote": "Limitation of liability and time for filing a claim",
+          "title": "Sorumluluk sınırı",
+          "weight": 16,
+          "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+          "start": 1892,
+          "end": 1943
+        },
+        {
+          "category": "arbitration",
+          "quote": "THESE TERMS CONTAIN A MANDATORY ARBITRATION PROVISION THAT, AS FURTHER SET FORTH IN SECTION 6 BELOW, REQUIRES THE USE OF ARBITRATION ON AN INDIVIDUAL BASIS TO RESOLVE DISPUTES, RATHER THAN JURY TRIALS OR ANY OTHER COURT PROCEEDINGS, OR CLASS ACTIONS OF ANY KIND. IN ARBITRATION THERE IS LESS DISCOVERY AND APPELL",
+          "title": "Tahkim / toplu dava kısıtlaması",
+          "weight": 22,
+          "explanation": "Uyuşmazlık çözüm yolu veya toplu dava imkânı sınırlanabilir.",
+          "start": 3214,
+          "end": 3526
+        }
+      ]
+    },
+    {
+      "id": "dropbox",
+      "url": "https://www.dropbox.com/terms",
+      "finalUrl": "https://www.dropbox.com/terms",
+      "chars": 25302,
+      "sha256": "262875d44707d89c6e0904e04092bbf6119bea37e5cbee98d724ff85e4ab61b5",
+      "capturedAt": "2026-10-10T08:36:08.938Z",
+      "scope": "selected annotated excerpts",
+      "analyzedChars": 5290,
+      "report": {
+        "score": 86,
+        "observedScore": 86,
+        "risks": [
+          {
+            "category": "auto_renewal",
+            "quote": "CA 94158 copyright@dropbox.com Paid Accounts Billing. You can increase your storage space and add paid features to your account (turning your account into a “Paid Account”). We’ll automatically bill you from the date you convert to a Paid Account and on each periodic renewal until cancellation. If you’re on an annual plan, we’ll send you a notice email reminding you that your plan is about to renew within a reasonable period of time prior to the renewal date. You’re responsible for all applicable taxes, and we’ll charge tax when required to do so. Some countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subsc",
+            "title": "Otomatik yenileme",
+            "weight": 18,
+            "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+            "start": 0,
+            "end": 880
+          },
+          {
+            "category": "no_refund",
+            "quote": "CA 94158 copyright@dropbox.com Paid Accounts Billing. You can increase your storage space and add paid features to your account (turning your account into a “Paid Account”). We’ll automatically bill you from the date you convert to a Paid Account and on each periodic renewal until cancellation. If you’re on an annual plan, we’ll send you a notice email reminding you that your plan is about to renew within a reasonable period of time prior to the renewal date. You’re responsible for all applicable taxes, and we’ll charge tax when required to do so. Some countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subsc",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 0,
+            "end": 880
+          },
+          {
+            "category": "auto_renewal",
+            "quote": "countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subscriptions and obtain a refund within 14 days of signing up for, upgrading to, or renewing a Paid Account by clicking here. Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes",
+            "title": "Otomatik yenileme",
+            "weight": 18,
+            "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+            "start": 882,
+            "end": 1762
+          },
+          {
+            "category": "no_refund",
+            "quote": "countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subscriptions and obtain a refund within 14 days of signing up for, upgrading to, or renewing a Paid Account by clicking here. Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 882,
+            "end": 1762
+          },
+          {
+            "category": "arbitration",
+            "quote": "a consumers with respect to claims relating to or arising out of use of the Templates. IF YOU’RE A U.S. RESIDENT, YOU ALSO AGREE TO THE FOLLOWING MANDATORY ARBITRATION PROVISIONS: We Both Agree to Arbitrate. You and Dropbox agree to resolve any claims relating to or arising out of these Terms or the Services through final and binding individual arbitration by a single arbitrator, except as set forth under the “Exceptions to Agreement to Arbitrate” below. This includes disputes arising out of or relating to the interpretation or application of this “Mandatory Arbitration Provisions” section, including its scope, enforceability, revocability, or validity. The arbitrator may award relief only individually and only to the extent necessary to redress your individual claim(s); the arbitrator may not award relief on behalf of others or the general public. Opt out of Agreemen",
+            "title": "Tahkim / toplu dava kısıtlaması",
+            "weight": 22,
+            "explanation": "Uyuşmazlık çözüm yolu veya toplu dava imkânı sınırlanabilir.",
+            "start": 1764,
+            "end": 2644
+          },
+          {
+            "category": "auto_renewal",
+            "quote": "ese Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes to our product offerings, changes to our business, or changes in economic conditions. We’ll give you no less than 30 days’ advance notice of these changes via a message to the email address associated with your account and you’ll have the opportunity to cancel your subscription before the new fee comes into effect. Dropbox Teams Email address. If you sign up for a Dropbox account with an email address provisioned by your organization, your organization may be able to block your use of Dropbox until you transition to an account on a",
+            "title": "Otomatik yenileme",
+            "weight": 18,
+            "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+            "start": 2646,
+            "end": 3526
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "ese Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes to our product offerings, changes to our business, or changes in economic conditions. We’ll give you no less than 30 days’ advance notice of these changes via a message to the email address associated with your account and you’ll have the opportunity to cancel your subscription before the new fee comes into effect. Dropbox Teams Email address. If you sign up for a Dropbox account with an email address provisioned by your organization, your organization may be able to block your use of Dropbox until you transition to an account on a",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 2646,
+            "end": 3526
+          },
+          {
+            "category": "liability",
+            "quote": "may not apply to you. For example, these disclaimers do not override the legal protections, including statutory warranties, granted to consumers by EU law. Limitation of Liability WE DON’T EXCLUDE OR LIMIT OUR LIABILITY TO YOU WHERE IT WOULD BE ILLEGAL TO DO SO—THIS INCLUDES ANY LIABILITY FOR DROPBOX’S OR ITS AFFILIATES’ FRAUD OR FRAUDULENT MISREPRESENTATION IN PROVIDING THE SERVICES. IN COUNTRIES WHERE THE FOLLOWING TYPES OF EXCLUSIONS AREN’T ALLOWED, WE'RE RESPONSIBLE TO YOU ONLY FOR LOSSES AND DAMAGES THAT ARE A REASONABLY FORESEEABLE RESULT OF OUR FAILURE TO USE REASONABLE CARE AND SKILL OR OUR BREACH OF OUR CONTRACT WITH YOU. THIS PARAGRAPH DOESN’T AFFECT CONSUMER RIGHTS THAT CAN'T BE WAIVED OR LIMITED BY ANY CONTRACT OR AGREEMENT. IF YOU ARE AN EU OR UK CONSUMER, THESE TERMS DO NOT EXCLUDE DROPBOX’S LIABILITY FOR LOSSES AND DAMAGES THAT ARE A RESULT OF OUR FAILU",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 3528,
+            "end": 4408
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "t will be void. Dropbox may assign its rights to any of its affiliates or subsidiaries, or to any successor in interest of any business associated with the Services. Modifications We may revise these Terms to better reflect: changes to the law, new regulatory requirements, or improvements or enhancements made to our Services. If an update affects your use of the Services or your legal rights as a user of our Services, we’ll notify you prior to the update's effective date by sending an email to the email address associated with your account or via an in-product notification. These updated terms will be effective no less than 30 days from when we notify you. If you don’t agree to the updates we make, please cancel your account and stop using the Services before the updated Terms become effective. Where applicable, we’ll offer you a prorated refund based on the amounts y",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 4410,
+            "end": 5290
+          }
+        ],
+        "uncertain": false,
+        "disclaimer": "Bu uygulama hukuki tavsiye vermez.",
+        "note": "Alıntının doğrulanması, yorumun hukuken doğru olduğunu kanıtlamaz. Risk bulunmaması güvenli olduğu anlamına gelmez.",
+        "mode": "llm",
+        "model": "openai/gpt-oss-20b",
+        "chunks": 1
+      },
+      "hits": [
+        {
+          "category": "auto_renewal",
+          "anchor": "automatically bill you",
+          "start": 180,
+          "end": 202
+        },
+        {
+          "category": "no_refund",
+          "anchor": "Refunds are only issued if",
+          "start": 739,
+          "end": 765
+        },
+        {
+          "category": "arbitration",
+          "anchor": "We Both Agree to Arbitrate",
+          "start": 1944,
+          "end": 1970
+        },
+        {
+          "category": "liability",
+          "anchor": "WE DON’T EXCLUDE OR LIMIT OUR LIABILITY",
+          "start": 3708,
+          "end": 3747
+        },
+        {
+          "category": "unilateral_change",
+          "anchor": "We may revise these Terms",
+          "start": 4590,
+          "end": 4615
+        }
+      ],
+      "misses": [
+        {
+          "category": "termination",
+          "anchor": "right to suspend it",
+          "start": 1600,
+          "end": 1619
+        }
+      ],
+      "unmatched": [
+        {
+          "category": "auto_renewal",
+          "quote": "countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subscriptions and obtain a refund within 14 days of signing up for, upgrading to, or renewing a Paid Account by clicking here. Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes",
+          "title": "Otomatik yenileme",
+          "weight": 18,
+          "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+          "start": 882,
+          "end": 1762
+        },
+        {
+          "category": "no_refund",
+          "quote": "countries have mandatory local laws regarding your cancellation rights, and this paragraph doesn’t override these laws. Cancellation. You may cancel your Paid Account at any time. Refunds are only issued if required by law. For example, users living in the European Union have the right to cancel their Paid Account subscriptions and obtain a refund within 14 days of signing up for, upgrading to, or renewing a Paid Account by clicking here. Downgrades. Your Paid Account will remain in effect until it's cancelled or terminated under these Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes",
+          "title": "İade kısıtlaması",
+          "weight": 16,
+          "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+          "start": 882,
+          "end": 1762
+        },
+        {
+          "category": "auto_renewal",
+          "quote": "ese Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes to our product offerings, changes to our business, or changes in economic conditions. We’ll give you no less than 30 days’ advance notice of these changes via a message to the email address associated with your account and you’ll have the opportunity to cancel your subscription before the new fee comes into effect. Dropbox Teams Email address. If you sign up for a Dropbox account with an email address provisioned by your organization, your organization may be able to block your use of Dropbox until you transition to an account on a",
+          "title": "Otomatik yenileme",
+          "weight": 18,
+          "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+          "start": 2646,
+          "end": 3526
+        },
+        {
+          "category": "unilateral_change",
+          "quote": "ese Terms. If you’re on a Dropbox Family plan, the Family manager may be able to downgrade your account at any time. If you don’t pay for your Paid Account on time, we reserve the right to suspend it or remove Paid Account features. Changes. We may change the fees in effect on renewal of your subscription, to reflect factors such as changes to our product offerings, changes to our business, or changes in economic conditions. We’ll give you no less than 30 days’ advance notice of these changes via a message to the email address associated with your account and you’ll have the opportunity to cancel your subscription before the new fee comes into effect. Dropbox Teams Email address. If you sign up for a Dropbox account with an email address provisioned by your organization, your organization may be able to block your use of Dropbox until you transition to an account on a",
+          "title": "Tek taraflı değişiklik",
+          "weight": 14,
+          "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+          "start": 2646,
+          "end": 3526
+        }
+      ]
+    },
+    {
+      "id": "reddit",
+      "url": "https://redditinc.com/policies/user-agreement",
+      "finalUrl": "https://redditinc.com/policies/user-agreement",
+      "chars": 86454,
+      "sha256": "6646e7b2614454bfd7a7b9c02109eacf17986ac25f1adb4a5470c20506a8b6ab",
+      "capturedAt": "2026-10-10T08:36:12.534Z",
+      "scope": "selected annotated excerpts",
+      "analyzedChars": 2644,
+      "report": {
+        "score": null,
+        "observedScore": 44,
+        "risks": [
+          {
+            "category": "unilateral_change",
+            "quote": "We may make changes to these Terms from time to time. If we make changes, we will post the revised Terms and update the Effective Date above. If the changes, in our sole discretion, are material, we may also notify you by sending an email to the address associated with your Account (if you have chosen to provide a verified email address) or by otherwise providing you with notice through our Services. By continuing to access or use the Services on or after the Effective Date of the revised Terms, you agree to be bound by the revised Terms. If you do not agree to the revised Terms, you must stop accessing and using our Services before the changes become effective.",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 177,
+            "end": 847
+          },
+          {
+            "category": "termination",
+            "quote": "es. If you stop using the Services without deleting your Account, your Account may be deactivated due to prolonged inactivity.To the fullest extent permitted by applicable law, we may suspend or terminate your Account, moderator status, or ability to access or use the Services at any time for any or no reason, including for violating these Terms or our Reddit Rules.The following sections will survive any termination of these Terms or of your Account: 5 (Your Content), 7 (Things You Cannot Do), 12 (Indemnity), 13 (Disclaimers and Limitation of Liability), 14 (Governing Law and Venue), 17 (Termination), and 18 (Miscellaneous).",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 882,
+            "end": 1514
+          },
+          {
+            "category": "liability",
+            "quote": "ce to you. Any future release, update, or other addition to functionality of the Services will be subject to these Terms, which may be updated from time to time. You agree that we will not be liable to you or to any third party for any modification, suspension, or discontinuation of the Services or any part thereof.We personalize your experience on the Services based on a variety of factors, including your activity on the Services, communities you are subscribed to, and preferences you’ve identified in your settings. Based on these and other factors, we may make recommendations to make your experience on Reddit more relevant. For more information about your content recommendations, as well as a description of how you can control certain personalization options, please see our Help Center.",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 1764,
+            "end": 2563
+          }
+        ],
+        "uncertain": true,
+        "disclaimer": "Bu uygulama hukuki tavsiye vermez.",
+        "note": "Alıntının doğrulanması, yorumun hukuken doğru olduğunu kanıtlamaz. Risk bulunmaması güvenli olduğu anlamına gelmez.",
+        "mode": "llm",
+        "model": "openai/gpt-oss-20b",
+        "chunks": 1
+      },
+      "hits": [
+        {
+          "category": "unilateral_change",
+          "anchor": "may make changes to these Terms",
+          "start": 180,
+          "end": 211
+        },
+        {
+          "category": "termination",
+          "anchor": "may suspend or terminate your Account",
+          "start": 1062,
+          "end": 1099
+        },
+        {
+          "category": "liability",
+          "anchor": "will not be liable to you",
+          "start": 1944,
+          "end": 1969
+        }
+      ],
+      "misses": [],
+      "unmatched": []
+    },
+    {
+      "id": "zoom",
+      "url": "https://www.zoom.com/en/trust/terms/",
+      "finalUrl": "https://www.zoom.com/en/trust/terms/?cms_guid=false",
+      "chars": 87173,
+      "sha256": "ede25cbd2cebcce8eaf326049d018a462d6f1fbf6677da6871bdca4f47408356",
+      "capturedAt": "2026-10-10T08:36:14.349Z",
+      "scope": "selected annotated excerpts",
+      "analyzedChars": 5290,
+      "report": {
+        "score": null,
+        "observedScore": 100,
+        "risks": [
+          {
+            "category": "auto_renewal",
+            "quote": "nd that you will not bring class-action claims against Zoom; (ii) in Sections 12 and 14, that certain terms and conditions apply with respect to recurring subscription Charges and automatic renewals; (iii) in Section 15, that Zoom may make modifications, deletions, and additions to these Terms of Service and our Service Description; and (iv) in Section 26, that you release Zoom from, and waive your right to recover from Zoom, certain damages. You acknowledge that you will only create an account or otherwise use the Services and Software if you agree to be legally bound by all terms and conditions herein. Your acceptance of this Agreement creates a legally binding contract between you and Zoom.",
+            "title": "Otomatik yenileme",
+            "weight": 18,
+            "explanation": "Abonelik siz iptal edene kadar yenilenebilir; ücret ve iptal tarihini kontrol edin.",
+            "start": 0,
+            "end": 702
+          },
+          {
+            "category": "no_refund",
+            "quote": "12.2 Non-Cancelable and Non-Refundable Charges. You agree that all payments are non-cancelable for the Initial Subscription Term or the then-current Renewal Term, as applicable, and are final and non-refundable, unless otherwise agreed to by Zoom, required by Law, or set forth in your Order Form.",
+            "title": "İade kısıtlaması",
+            "weight": 16,
+            "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+            "start": 1057,
+            "end": 1354
+          },
+          {
+            "category": "unilateral_change",
+            "quote": "12.3 Changes to Pricing. Zoom may change prices for the Services at any time, in its sole discretion. For changes to your Charges, Zoom will provide you with not less than (i) thirty (30) calendar days prior notice, or (ii) the time period prescribed by applicable Law (each, (i) and (ii), a “Rate Change Notice”). Unless prohibited by the terms of your Order Form, any changes to your Charges will be effec",
+            "title": "Tek taraflı değişiklik",
+            "weight": 14,
+            "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+            "start": 1355,
+            "end": 1762
+          },
+          {
+            "category": "termination",
+            "quote": "ent. Without limiting our rights in any other section of this Agreement, including 14.3, if any failure to pay Charges continues for five (5) calendar days following the due date, Zoom may terminate, suspend, or disconnect your Services immediately and without prior notice.",
+            "title": "Hesap / hizmet sonlandırma",
+            "weight": 14,
+            "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+            "start": 2646,
+            "end": 2920
+          },
+          {
+            "category": "arbitration",
+            "quote": "You agree to resolve certain disputes with Zoom through binding arbitration (“Arbitration Agreement”). Arbitration means that an arbitrator, and not a judge or a jury, will decide the dispute. The parties expressly waive the right to bring or participate in any kind of class, collective, or mass action, private attorney general action, or any other representative action. This Arbitration Agreement supersedes all prior versions.",
+            "title": "Tahkim / toplu dava kısıtlaması",
+            "weight": 22,
+            "explanation": "Uyuşmazlık çözüm yolu veya toplu dava imkânı sınırlanabilir.",
+            "start": 1964,
+            "end": 2395
+          },
+          {
+            "category": "liability",
+            "quote": "26. LIMITATION ON LIABILITY",
+            "title": "Sorumluluk sınırı",
+            "weight": 16,
+            "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+            "start": 3550,
+            "end": 3577
+          }
+        ],
+        "uncertain": true,
+        "disclaimer": "Bu uygulama hukuki tavsiye vermez.",
+        "note": "Alıntının doğrulanması, yorumun hukuken doğru olduğunu kanıtlamaz. Risk bulunmaması güvenli olduğu anlamına gelmez.",
+        "mode": "llm",
+        "model": "openai/gpt-oss-20b",
+        "chunks": 1
+      },
+      "hits": [
+        {
+          "category": "auto_renewal",
+          "anchor": "automatic renewals",
+          "start": 180,
+          "end": 198
+        },
+        {
+          "category": "no_refund",
+          "anchor": "Non-Cancelable and Non-Refundable Charges",
+          "start": 1062,
+          "end": 1103
+        },
+        {
+          "category": "termination",
+          "anchor": "Zoom may terminate, suspend, or disconnect",
+          "start": 2826,
+          "end": 2868
+        }
+      ],
+      "misses": [
+        {
+          "category": "arbitration",
+          "anchor": "CLASS ACTION WAIVER",
+          "start": 1944,
+          "end": 1963
+        },
+        {
+          "category": "liability",
+          "anchor": "WILL NOT BE LIABLE FOR ANY",
+          "start": 3708,
+          "end": 3734
+        },
+        {
+          "category": "unilateral_change",
+          "anchor": "Zoom may make modifications, deletions, and additions",
+          "start": 226,
+          "end": 279
+        }
+      ],
+      "unmatched": [
+        {
+          "category": "unilateral_change",
+          "quote": "12.3 Changes to Pricing. Zoom may change prices for the Services at any time, in its sole discretion. For changes to your Charges, Zoom will provide you with not less than (i) thirty (30) calendar days prior notice, or (ii) the time period prescribed by applicable Law (each, (i) and (ii), a “Rate Change Notice”). Unless prohibited by the terms of your Order Form, any changes to your Charges will be effec",
+          "title": "Tek taraflı değişiklik",
+          "weight": 14,
+          "explanation": "Hizmet sağlayıcı koşulları değiştirebilir; bildirim ve itiraz şartlarını kontrol edin.",
+          "start": 1355,
+          "end": 1762
+        },
+        {
+          "category": "arbitration",
+          "quote": "You agree to resolve certain disputes with Zoom through binding arbitration (“Arbitration Agreement”). Arbitration means that an arbitrator, and not a judge or a jury, will decide the dispute. The parties expressly waive the right to bring or participate in any kind of class, collective, or mass action, private attorney general action, or any other representative action. This Arbitration Agreement supersedes all prior versions.",
+          "title": "Tahkim / toplu dava kısıtlaması",
+          "weight": 22,
+          "explanation": "Uyuşmazlık çözüm yolu veya toplu dava imkânı sınırlanabilir.",
+          "start": 1964,
+          "end": 2395
+        },
+        {
+          "category": "liability",
+          "quote": "26. LIMITATION ON LIABILITY",
+          "title": "Sorumluluk sınırı",
+          "weight": 16,
+          "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+          "start": 3550,
+          "end": 3577
+        }
+      ]
+    }
+  ]
+}

@@ -1,69 +1,20 @@
 {
   "reviewer": "Implementer; not independent legal ground truth",
-  "run": "2026-10-10T11:14:06.390Z",
+  "run": "2026-10-10T15:30:39.382Z",
   "decisions": [
     {
-      "document": "github",
+      "document": "spotify",
+      "category": "termination",
+      "start": 0,
+      "supported": true,
+      "reason": "Aynı blokta sağlayıcının en az 14 gün bildirimle ücretli aboneliği sonlandırma yetkisi var; doğal kod bitişi tek başına gerekçe değil."
+    },
+    {
+      "document": "spotify",
       "category": "no_refund",
-      "start": 89,
-      "supported": false,
-      "reason": "Yalnızca bölüm başlığı; iade hükmü yok."
-    },
-    {
-      "document": "github",
-      "category": "termination",
-      "start": 1038,
-      "supported": false,
-      "reason": "Yalnızca bölüm başlığı; fesih yetkisinin içeriği yok."
-    },
-    {
-      "document": "github",
-      "category": "liability",
-      "start": 1330,
-      "supported": false,
-      "reason": "Hükümlerin sona ermeden sonra devamı; sorumluluk sınırı hükmü değil."
-    },
-    {
-      "document": "github",
-      "category": "unilateral_change",
-      "start": 2522,
-      "supported": false,
-      "reason": "Tanımları açıklayan giriş; değişiklik yetkisi değil."
-    },
-    {
-      "document": "github",
-      "category": "unilateral_change",
-      "start": 2646,
+      "start": 969,
       "supported": true,
-      "reason": "Özet de olsa değişiklik yetkisi ve bildirim koşulu var."
-    },
-    {
-      "document": "spotify",
-      "category": "termination",
-      "start": 280,
-      "supported": false,
-      "reason": "Ön ödemeli kodun süresinin bitmesi; sağlayıcının takdiri fesih yetkisi değil."
-    },
-    {
-      "document": "spotify",
-      "category": "termination",
-      "start": 512,
-      "supported": true,
-      "reason": "Sağlayıcının 14 gün bildirimle aboneliği sonlandırma yetkisi var."
-    },
-    {
-      "document": "spotify",
-      "category": "liability",
-      "start": 1892,
-      "supported": false,
-      "reason": "Yalnızca başlık; sorumluluk sınırı açıklanmıyor."
-    },
-    {
-      "document": "spotify",
-      "category": "arbitration",
-      "start": 3214,
-      "supported": true,
-      "reason": "Bireysel zorunlu tahkim ve toplu dava kısıtlamasını açıkça bildiren özet."
+      "reason": "Spotify sona erdirdiğinde, belirtilen istisnalar dışında önceden ödenen tutarları iade etmeyeceği yazıyor."
     },
     {
       "document": "dropbox",
@@ -88,31 +39,17 @@
     },
     {
       "document": "dropbox",
-      "category": "unilateral_change",
-      "start": 2646,
-      "supported": true,
-      "reason": "Yenilemede ücret değişikliği yetkisi ve 30 gün bildirim var."
-    },
-    {
-      "document": "zoom",
-      "category": "unilateral_change",
-      "start": 1355,
-      "supported": true,
-      "reason": "Tek taraflı fiyat değişikliği ve bildirim hükmü."
-    },
-    {
-      "document": "zoom",
-      "category": "arbitration",
-      "start": 1964,
-      "supported": true,
-      "reason": "Bağlayıcı tahkim ve toplu/temsili dava feragati hükmü mevcut."
+      "category": "auto_renewal",
+      "start": 4410,
+      "supported": false,
+      "reason": "Koşul güncellemesi, bildirim ve iptal metni; otomatik tahsilat veya yenileme hükmü yok."
     },
     {
       "document": "zoom",
       "category": "liability",
-      "start": 3550,
-      "supported": false,
-      "reason": "Yalnızca başlık; sorumluluk sınırı hükmü yok."
+      "start": 4035,
+      "supported": true,
+      "reason": "Blokta bazı zararları talep etme hakkından feragat açıkça belirtiliyor; önceki sınır listesinin giriş cümlesi kesilmiş olduğundan bağlam sınırlı."
     }
   ]
 }
