@@ -1,0 +1,6 @@
+node_modules/
+.env
+cypress/screenshots/
+eval/sources/
+extension/dist/
+*.zip

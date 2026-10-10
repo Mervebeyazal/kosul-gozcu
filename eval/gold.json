@@ -1,0 +1,7 @@
+{
+ "github":[["no_refund","the Service is billed in advance"],["termination","GitHub has the right to suspend"],["liability","We will not be liable for damages"],["unilateral_change","We reserve the right, at our sole discretion, to amend"]],
+ "spotify":[["no_refund","refunds or credits for any partial subscription periods"],["termination","may terminate these Terms (including"],["liability","YOU AGREE THAT YOUR SOLE AND EXCLUSIVE REMEDY"],["unilateral_change","may change these Terms"],["arbitration","class action waiver, and jury trial waiver"]],
+ "dropbox":[["auto_renewal","automatically bill you"],["no_refund","Refunds are only issued if"],["arbitration","We Both Agree to Arbitrate"],["termination","right to suspend it"],["liability","WE DON’T EXCLUDE OR LIMIT OUR LIABILITY"],["unilateral_change","We may revise these Terms"]],
+ "reddit":[["unilateral_change","may make changes to these Terms"],["termination","may suspend or terminate your Account"],["liability","will not be liable to you"]],
+ "zoom":[["auto_renewal","automatic renewals"],["no_refund","Non-Cancelable and Non-Refundable Charges"],["arbitration","CLASS ACTION WAIVER"],["termination","Zoom may terminate, suspend, or disconnect"],["liability","WILL NOT BE LIABLE FOR ANY"],["unilateral_change","Zoom may make modifications, deletions, and additions"]]
+}

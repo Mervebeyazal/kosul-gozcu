@@ -1,0 +1,27 @@
+{
+  "name": "kosul-gozcu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test test/*.test.js",
+    "demo": "cypress run",
+    "eval": "node eval/run.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "esbuild": "^0.28.2",
+    "express": "^5.3.0",
+    "linkedom": "^0.18.13",
+    "page-agent": "^1.12.4"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0"
+  }
+}

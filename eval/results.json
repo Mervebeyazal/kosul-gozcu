@@ -1,0 +1,258 @@
+{
+  "mode": "deterministic-demo-baseline-NOT-live-LLM",
+  "scope": "24 selected clause anchors, six categories; NOT exhaustive legal ground truth. Labels authored by implementer, not independently reviewed.",
+  "tp": 13,
+  "fn": 11,
+  "fp": 4,
+  "precision": 0.7647058823529411,
+  "recall": 0.5416666666666666,
+  "rows": [
+    {
+      "id": "github",
+      "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "finalUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "chars": 45644,
+      "sha256": "2533fd8ad6f7820ffa7ba3c2a2ad3289dcd63534f1327304ce33f9b31f6ea8d8",
+      "capturedAt": "2026-10-10T08:36:06.343Z",
+      "hits": [
+        {
+          "category": "liability",
+          "anchor": "We will not be liable for damages",
+          "start": 2461,
+          "end": 2494
+        }
+      ],
+      "misses": [
+        {
+          "category": "no_refund",
+          "anchor": "the Service is billed in advance",
+          "start": 32964,
+          "end": 32996
+        },
+        {
+          "category": "termination",
+          "anchor": "GitHub has the right to suspend",
+          "start": 36710,
+          "end": 36741
+        },
+        {
+          "category": "unilateral_change",
+          "anchor": "We reserve the right, at our sole discretion, to amend",
+          "start": 42267,
+          "end": 42321
+        }
+      ],
+      "falseAlarms": [
+        {
+          "category": "no_refund",
+          "quote": "3. Billing Schedule; No Refunds",
+          "title": "İade kısıtlaması",
+          "weight": 16,
+          "explanation": "Bazı ödemeler geri verilmeyebilir; istisnaları ve yerel haklarınızı kontrol edin.",
+          "start": 32873,
+          "end": 32904
+        },
+        {
+          "category": "termination",
+          "quote": "3. GitHub May Terminate",
+          "title": "Hesap / hizmet sonlandırma",
+          "weight": 14,
+          "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+          "start": 36686,
+          "end": 36709
+        }
+      ]
+    },
+    {
+      "id": "spotify",
+      "url": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "finalUrl": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "chars": 55033,
+      "sha256": "a13a37642291f17a6e9aada8e8a83a3ee90f2191d88b1ddc37cdc5949690ae3f",
+      "capturedAt": "2026-10-10T08:36:07.438Z",
+      "hits": [
+        {
+          "category": "unilateral_change",
+          "anchor": "may change these Terms",
+          "start": 993,
+          "end": 1015
+        },
+        {
+          "category": "arbitration",
+          "anchor": "class action waiver, and jury trial waiver",
+          "start": 30789,
+          "end": 30831
+        }
+      ],
+      "misses": [
+        {
+          "category": "no_refund",
+          "anchor": "refunds or credits for any partial subscription periods",
+          "start": 11524,
+          "end": 11579
+        },
+        {
+          "category": "termination",
+          "anchor": "may terminate these Terms (including",
+          "start": 22643,
+          "end": 22679
+        },
+        {
+          "category": "liability",
+          "anchor": "YOU AGREE THAT YOUR SOLE AND EXCLUSIVE REMEDY",
+          "start": 25566,
+          "end": 25611
+        }
+      ],
+      "falseAlarms": [
+        {
+          "category": "termination",
+          "quote": "Your right to terminate these Terms if you no longer want to use the Spotify Service is set forth in Section 6 below.",
+          "title": "Hesap / hizmet sonlandırma",
+          "weight": 14,
+          "explanation": "Hesap veya hizmet erişimi sağlayıcı tarafından sonlandırılabilir.",
+          "start": 5311,
+          "end": 5428
+        },
+        {
+          "category": "liability",
+          "quote": "Limitation of liability and time for filing a claim",
+          "title": "Sorumluluk sınırı",
+          "weight": 16,
+          "explanation": "Zararlar için sağlayıcının sorumluluğu sınırlandırılabilir.",
+          "start": 25514,
+          "end": 25565
+        }
+      ]
+    },
+    {
+      "id": "dropbox",
+      "url": "https://www.dropbox.com/terms",
+      "finalUrl": "https://www.dropbox.com/terms",
+      "chars": 25302,
+      "sha256": "262875d44707d89c6e0904e04092bbf6119bea37e5cbee98d724ff85e4ab61b5",
+      "capturedAt": "2026-10-10T08:36:08.938Z",
+      "hits": [
+        {
+          "category": "termination",
+          "anchor": "right to suspend it",
+          "start": 10865,
+          "end": 10884
+        },
+        {
+          "category": "liability",
+          "anchor": "WE DON’T EXCLUDE OR LIMIT OUR LIABILITY",
+          "start": 14928,
+          "end": 14967
+        },
+        {
+          "category": "unilateral_change",
+          "anchor": "We may revise these Terms",
+          "start": 24414,
+          "end": 24439
+        }
+      ],
+      "misses": [
+        {
+          "category": "auto_renewal",
+          "anchor": "automatically bill you",
+          "start": 9768,
+          "end": 9790
+        },
+        {
+          "category": "no_refund",
+          "anchor": "Refunds are only issued if",
+          "start": 10327,
+          "end": 10353
+        },
+        {
+          "category": "arbitration",
+          "anchor": "We Both Agree to Arbitrate",
+          "start": 18490,
+          "end": 18516
+        }
+      ],
+      "falseAlarms": []
+    },
+    {
+      "id": "reddit",
+      "url": "https://redditinc.com/policies/user-agreement",
+      "finalUrl": "https://redditinc.com/policies/user-agreement",
+      "chars": 86454,
+      "sha256": "6646e7b2614454bfd7a7b9c02109eacf17986ac25f1adb4a5470c20506a8b6ab",
+      "capturedAt": "2026-10-10T08:36:12.534Z",
+      "hits": [
+        {
+          "category": "termination",
+          "anchor": "may suspend or terminate your Account",
+          "start": 62385,
+          "end": 62422
+        },
+        {
+          "category": "liability",
+          "anchor": "will not be liable to you",
+          "start": 44048,
+          "end": 44073
+        }
+      ],
+      "misses": [
+        {
+          "category": "unilateral_change",
+          "anchor": "may make changes to these Terms",
+          "start": 60364,
+          "end": 60395
+        }
+      ],
+      "falseAlarms": []
+    },
+    {
+      "id": "zoom",
+      "url": "https://www.zoom.com/en/trust/terms/",
+      "finalUrl": "https://www.zoom.com/en/trust/terms/?cms_guid=false",
+      "chars": 87173,
+      "sha256": "ede25cbd2cebcce8eaf326049d018a462d6f1fbf6677da6871bdca4f47408356",
+      "capturedAt": "2026-10-10T08:36:14.349Z",
+      "hits": [
+        {
+          "category": "auto_renewal",
+          "anchor": "automatic renewals",
+          "start": 1756,
+          "end": 1774
+        },
+        {
+          "category": "no_refund",
+          "anchor": "Non-Cancelable and Non-Refundable Charges",
+          "start": 21231,
+          "end": 21272
+        },
+        {
+          "category": "arbitration",
+          "anchor": "CLASS ACTION WAIVER",
+          "start": 54039,
+          "end": 54058
+        },
+        {
+          "category": "termination",
+          "anchor": "Zoom may terminate, suspend, or disconnect",
+          "start": 24755,
+          "end": 24797
+        },
+        {
+          "category": "liability",
+          "anchor": "WILL NOT BE LIABLE FOR ANY",
+          "start": 52410,
+          "end": 52436
+        }
+      ],
+      "misses": [
+        {
+          "category": "unilateral_change",
+          "anchor": "Zoom may make modifications, deletions, and additions",
+          "start": 1802,
+          "end": 1855
+        }
+      ],
+      "falseAlarms": []
+    }
+  ]
+}
