@@ -2,8 +2,14 @@ import {categories,verify} from './core.js';
 import Ajv from 'ajv';
 let lastCall=0,remainingTokens=null;
 export function evidenceBlocks(text){
- const blocks=[];
- for(const line of text.split('\n'))for(let offset=0;offset<line.length;offset+=1200){const quote=line.slice(offset,offset+1200);if(quote.trim().length>=20)blocks.push({id:blocks.length,text:quote});}
+ const blocks=[];let start=0;
+ while(start<text.length){
+  let end=Math.min(text.length,start+1400);
+  if(end<text.length){const boundary=text.lastIndexOf('\n',end);if(boundary>=start+700)end=boundary+1;}
+  const quote=text.slice(start,end);
+  if(quote.trim().length>=20)blocks.push({id:blocks.length,text:quote});
+  start=end;
+ }
  return blocks;
 }
 export function evidenceSchema(blocks){return {type:'object',additionalProperties:false,required:['uncertain','risks'],properties:{uncertain:{type:'boolean'},risks:{type:'array',maxItems:40,items:{type:'object',additionalProperties:false,required:['category','evidence_id'],properties:{category:{type:'string',enum:Object.keys(categories)},evidence_id:{type:'integer',enum:blocks.length?blocks.map(b=>b.id):[-1]}}}}}};}
@@ -12,11 +18,17 @@ export function resolveEvidence(candidate,blocks,text,{partial=false}={}){
  if(!valid(candidate))throw Error('Model kanıt şeması geçersiz; rapor reddedildi.');
  const suppressed=[];
  const risks=candidate.risks.flatMap(r=>{const block=blocks.find(b=>b.id===r.evidence_id);if(!block)throw Error('Kaynakta bulunmayan kanıt kimliği; rapor reddedildi.');const quote=block.text;
-  if(isHeading(quote)){suppressed.push({category:r.category,quote,reason:'Numaralı kısa başlık; tek başına sözleşme maddesi olarak doğrulanamadı.'});return [];}
+  const reason=rejectionReason(r.category,quote);
+  if(reason){suppressed.push({category:r.category,quote,reason});return [];}
   return [{category:r.category,quote}];});
  return {...verify({uncertain:candidate.uncertain||suppressed.length>0,risks},text,{partial}),suppressed};
 }
 export function isHeading(text){const s=text.trim();return s.length<=120&&!/[.!?;:]\s*$/.test(s)&&/^(?:\d+|[A-Z])\.\s+\S/.test(s);}
+export function rejectionReason(category,quote){
+ if(isHeading(quote))return 'Numaralı kısa başlık; tek başına sözleşme maddesi olarak doğrulanamadı.';
+ if(category==='termination'&&/surviv(?:e|al|ing)[\s\S]{0,80}termination/i.test(quote)&&!/(?:right to|may|will|can|reserve[\s\S]{0,40}right)[\s\S]{0,60}(?:terminate|suspend)/i.test(quote))return 'Sona erme sonrası yürürlük hükmü; sağlayıcının sonlandırma yetkisini tek başına kanıtlamıyor.';
+ return null;
+}
 async function analyzeChunk(text,{partial=false}={}){
  if(!process.env.LLM_API_KEY?.trim())throw Error('LLM anahtarı yapılandırılmadı. Analiz yapılmadı.');
  const endpoint=process.env.LLM_URL||'https://api.openai.com/v1/chat/completions';const model=process.env.LLM_MODEL||'gpt-4.1-mini';

@@ -2770,7 +2770,7 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
     $("report").replaceChildren();
     $("report").append(el("div", r.score === null ? "Skor belirsiz" : `${r.score} / 100`, "score"), el("p", r.mode === "demo" ? "DEMO \u2022 LLM kullan\u0131lmad\u0131. S\u0131n\u0131rl\u0131 desen taramas\u0131." : "LLM \u2022 Al\u0131nt\u0131lar kaynakta do\u011Fruland\u0131.", "badge"));
     if (r.uncertain) $("report").append(el("p", "Metin eksik veya yorum belirsiz. Kesin bir risk skoru verilemiyor."));
-    if (r.suppressed?.length) $("report").append(el("p", `${r.suppressed.length} ba\u015Fl\u0131k aday\u0131 yeterli madde kan\u0131t\u0131 ta\u015F\u0131mad\u0131\u011F\u0131 i\xE7in risk listesinden \xE7\u0131kar\u0131ld\u0131. \u0130nceleme eksik olabilir.`));
+    if (r.suppressed?.length) $("report").append(el("p", `${r.suppressed.length} aday yeterli madde kan\u0131t\u0131 ta\u015F\u0131mad\u0131\u011F\u0131 i\xE7in risk listesinden \xE7\u0131kar\u0131ld\u0131. \u0130nceleme eksik olabilir.`));
     for (const risk of r.risks) {
       const card = el("article", "", "card");
       card.append(el("h2", risk.title), el("p", risk.explanation), el("blockquote", risk.quote), el("small", `Kaynak aral\u0131\u011F\u0131: ${risk.start}\u2013${risk.end}`));

@@ -9,7 +9,7 @@ const restore=el('button','Son raporu aç');$('export').after(restore);
 restore.onclick=async()=>{try{const {token}=await(await fetch(base+'/session')).json();const response=await fetch(base+'/report',{headers:{'X-Session-Token':token}});const r=await response.json();if(!response.ok)throw Error(r.error||'Rapor alınamadı');report=r;render(r);$('status').textContent=`Son tamamlanan rapor açıldı: ${r.source?.title||r.source?.url||'Kaynak'} • ${r.analyzedAt}. Bu rapor mevcut sekmeye ait olmayabilir.`;}catch(e){$('status').textContent=e.message;}};
 function render(r){$('report').replaceChildren();$('report').append(el('div',r.score===null?'Skor belirsiz':`${r.score} / 100`,'score'),el('p',r.mode==='demo'?'DEMO • LLM kullanılmadı. Sınırlı desen taraması.':'LLM • Alıntılar kaynakta doğrulandı.','badge'));
  if(r.uncertain)$('report').append(el('p','Metin eksik veya yorum belirsiz. Kesin bir risk skoru verilemiyor.'));
- if(r.suppressed?.length)$('report').append(el('p',`${r.suppressed.length} başlık adayı yeterli madde kanıtı taşımadığı için risk listesinden çıkarıldı. İnceleme eksik olabilir.`));
+ if(r.suppressed?.length)$('report').append(el('p',`${r.suppressed.length} aday yeterli madde kanıtı taşımadığı için risk listesinden çıkarıldı. İnceleme eksik olabilir.`));
  for(const risk of r.risks){const card=el('article','','card');card.append(el('h2',risk.title),el('p',risk.explanation),el('blockquote',risk.quote),el('small',`Kaynak aralığı: ${risk.start}–${risk.end}`));$('report').append(card);}
  if(!r.risks.length)$('report').append(el('p','Doğrulanmış risk maddesi bulunamadı. Bu sonuç güvenli olduğu anlamına gelmez.'));
  $('export').disabled=false;
