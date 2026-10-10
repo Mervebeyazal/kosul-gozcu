@@ -1,5 +1,6 @@
 node_modules/
 .env
+kosul-raporu*.json
 cypress/screenshots/
 eval/sources/
 extension/dist/

@@ -92,3 +92,11 @@ git push -u origin main
 ```
 
 Tam belge coverage evali, bağımsız gold anotasyon ve Chrome'da uzantı kabul testi tamamlanmadan üretim için hazır sayılmamalıdır. Gizlilik metinlerinde veri satışı, sınır ötesi aktarım ve saklama süresi kategorileri bu MVP'de bulunmaz.
+
+### Raporu geri açma ve terminal kullanımı
+
+Uzantıdaki **Son raporu aç** düğmesi, çalışan yerel servis oturumunun son başarılı raporunu getirir. Kaynak ve tarih gösterilir; rapor mevcut sekmeye ait olmayabilir. Rapor bellekte tutulur, servis yeniden başlatıldığında silinir. `/report` uç noktası aynı kaynak/Host kısıtlarını ve oturum anahtarını kullanır. JSON indirme rapor açıldığında etkinleşir.
+
+`node --env-file=.env analyze-terminal.mjs` kaydedilmiş `eval/sources/github.txt` metninde yeni bir canlı analiz yapar ve `kosul-raporu.json` dosyasına yazar. İsteğe bağlı ilk argüman başka bir metin dosyasıdır. Bu işlem Chrome DOM yakalamasını test etmez. Rapor dosyaları Git dışında tutulur.
+
+Kısa numaralı başlıklar deterministik olarak risk listesinden çıkarılır; `suppressed` alanında nedeni korunur ve skor belirsiz bırakılır. Bu dar filtre tüm başlıkları veya anlam hatalarını yakalamaz. Groq beklemeleri ve parça ilerlemesi UI ve terminalde gösterilir; büyük metinlerde birkaç dakika bekleme hâlâ mümkündür.

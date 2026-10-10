@@ -2751,10 +2751,26 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
     if (cls) n.className = cls;
     return n;
   }
+  var restore = el("button", "Son raporu a\xE7");
+  $("export").after(restore);
+  restore.onclick = async () => {
+    try {
+      const { token } = await (await fetch(base + "/session")).json();
+      const response = await fetch(base + "/report", { headers: { "X-Session-Token": token } });
+      const r = await response.json();
+      if (!response.ok) throw Error(r.error || "Rapor al\u0131namad\u0131");
+      report = r;
+      render(r);
+      $("status").textContent = `Son tamamlanan rapor a\xE7\u0131ld\u0131: ${r.source?.title || r.source?.url || "Kaynak"} \u2022 ${r.analyzedAt}. Bu rapor mevcut sekmeye ait olmayabilir.`;
+    } catch (e) {
+      $("status").textContent = e.message;
+    }
+  };
   function render(r) {
     $("report").replaceChildren();
     $("report").append(el("div", r.score === null ? "Skor belirsiz" : `${r.score} / 100`, "score"), el("p", r.mode === "demo" ? "DEMO \u2022 LLM kullan\u0131lmad\u0131. S\u0131n\u0131rl\u0131 desen taramas\u0131." : "LLM \u2022 Al\u0131nt\u0131lar kaynakta do\u011Fruland\u0131.", "badge"));
     if (r.uncertain) $("report").append(el("p", "Metin eksik veya yorum belirsiz. Kesin bir risk skoru verilemiyor."));
+    if (r.suppressed?.length) $("report").append(el("p", `${r.suppressed.length} ba\u015Fl\u0131k aday\u0131 yeterli madde kan\u0131t\u0131 ta\u015F\u0131mad\u0131\u011F\u0131 i\xE7in risk listesinden \xE7\u0131kar\u0131ld\u0131. \u0130nceleme eksik olabilir.`));
     for (const risk of r.risks) {
       const card = el("article", "", "card");
       card.append(el("h2", risk.title), el("p", risk.explanation), el("blockquote", risk.quote), el("small", `Kaynak aral\u0131\u011F\u0131: ${risk.start}\u2013${risk.end}`));
@@ -2781,6 +2797,7 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
       $("status").textContent = "\xD6nce a\xE7\u0131k sayfay\u0131 yakalay\u0131n.";
       return;
     }
+    let progressTimer;
     $("analyze").disabled = true;
     $("export").disabled = true;
     report = null;
@@ -2788,6 +2805,16 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
     $("status").textContent = $("mode").value === "demo" ? "Kaynak ve al\u0131nt\u0131lar do\u011Frulan\u0131yor\u2026" : "Model metni analiz ediyor. Uzun metinler birka\xE7 dakika s\xFCrebilir; al\u0131nt\u0131lar tamamland\u0131\u011F\u0131nda do\u011Frulanacak.";
     try {
       const { token } = await (await fetch(base + "/session")).json();
+      if ($("mode").value === "llm") progressTimer = setInterval(async () => {
+        try {
+          const response2 = await fetch(base + "/progress", { headers: { "X-Session-Token": token } });
+          if (response2.ok) {
+            const p = await response2.json();
+            if (progressTimer) $("status").textContent = p.message;
+          }
+        } catch {
+        }
+      }, 2e3);
       const response = await fetch(base + "/analyze", { method: "POST", headers: { "Content-Type": "application/json", "X-Session-Token": token }, body: JSON.stringify({ ...snapshot, mode: $("mode").value }) });
       const r = await response.json();
       if (!response.ok) throw Error(r.error || "Analiz ba\u015Far\u0131s\u0131z");
@@ -2797,6 +2824,8 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
     } catch (e) {
       $("status").textContent = e.message;
     } finally {
+      clearInterval(progressTimer);
+      progressTimer = null;
       $("analyze").disabled = false;
     }
   };

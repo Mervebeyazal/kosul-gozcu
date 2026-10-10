@@ -10,9 +10,13 @@ export function evidenceSchema(blocks){return {type:'object',additionalPropertie
 export function resolveEvidence(candidate,blocks,text,{partial=false}={}){
  const valid=new Ajv({allErrors:true}).compile(evidenceSchema(blocks));
  if(!valid(candidate))throw Error('Model kanıt şeması geçersiz; rapor reddedildi.');
- const risks=candidate.risks.map(r=>{const block=blocks.find(b=>b.id===r.evidence_id);if(!block)throw Error('Kaynakta bulunmayan kanıt kimliği; rapor reddedildi.');return {category:r.category,quote:block.text};});
- return verify({uncertain:candidate.uncertain,risks},text,{partial});
+ const suppressed=[];
+ const risks=candidate.risks.flatMap(r=>{const block=blocks.find(b=>b.id===r.evidence_id);if(!block)throw Error('Kaynakta bulunmayan kanıt kimliği; rapor reddedildi.');const quote=block.text;
+  if(isHeading(quote)){suppressed.push({category:r.category,quote,reason:'Numaralı kısa başlık; tek başına sözleşme maddesi olarak doğrulanamadı.'});return [];}
+  return [{category:r.category,quote}];});
+ return {...verify({uncertain:candidate.uncertain||suppressed.length>0,risks},text,{partial}),suppressed};
 }
+export function isHeading(text){const s=text.trim();return s.length<=120&&!/[.!?;:]\s*$/.test(s)&&/^(?:\d+|[A-Z])\.\s+\S/.test(s);}
 async function analyzeChunk(text,{partial=false}={}){
  if(!process.env.LLM_API_KEY?.trim())throw Error('LLM anahtarı yapılandırılmadı. Analiz yapılmadı.');
  const endpoint=process.env.LLM_URL||'https://api.openai.com/v1/chat/completions';const model=process.env.LLM_MODEL||'gpt-4.1-mini';
@@ -25,15 +29,16 @@ async function analyzeChunk(text,{partial=false}={}){
  let candidate;try{candidate=JSON.parse(content);}catch{throw Error('Model yanıtı geçerli JSON değil.');}
  return {...resolveEvidence(candidate,blocks,text,{partial}),mode:'llm',model};
 }
-async function analyzeDocument(text,{partial=false}={}){
+async function analyzeDocument(text,{partial=false,onProgress=()=>{}}={}){
  const isGroq=(process.env.LLM_URL||'').startsWith('https://api.groq.com/'),size=isGroq?7000:12000;
  const chunks=[];for(let start=0;start<text.length;start+=size)chunks.push(text.slice(start,start+size));if(!chunks.length)chunks.push('');
  const reports=[];
- for(const chunk of chunks){if(isGroq){const enough=remainingTokens!==null&&remainingTokens>Math.ceil(chunk.length/2)+2700;const interval=enough?2000:60000;const wait=Math.max(0,interval-(Date.now()-lastCall));if(wait)await new Promise(resolve=>setTimeout(resolve,wait));}lastCall=Date.now();reports.push(await analyzeChunk(chunk,{partial}));}
+ for(const chunk of chunks){if(isGroq){const enough=remainingTokens!==null&&remainingTokens>Math.ceil(chunk.length/2)+2700;const interval=enough?2000:60000;const wait=Math.max(0,interval-(Date.now()-lastCall));if(wait){onProgress(`Groq hız sınırı bekleniyor. ${reports.length}/${chunks.length} parça tamamlandı; sonraki parça yaklaşık ${Math.ceil(wait/1000)} saniye içinde başlayacak.`);await new Promise(resolve=>setTimeout(resolve,wait));}}onProgress(`Model ${reports.length+1}/${chunks.length} parçayı analiz ediyor. Uzantıyı açık tutun.`);lastCall=Date.now();reports.push(await analyzeChunk(chunk,{partial}));}
  const seen=new Set();const risks=reports.flatMap(r=>r.risks.map(({category,quote})=>({category,quote}))).filter(r=>{const key=r.category+'\n'+r.quote;if(seen.has(key))return false;seen.add(key);return true;});
- return {...verify({uncertain:reports.some(r=>r.uncertain),risks:risks.slice(0,40)},text,{partial:partial||risks.length>40}),mode:'llm',model:process.env.LLM_MODEL||'gpt-4.1-mini',chunks:reports.length};
+ return {...verify({uncertain:reports.some(r=>r.uncertain),risks:risks.slice(0,40)},text,{partial:partial||risks.length>40}),suppressed:reports.flatMap(r=>r.suppressed||[]),mode:'llm',model:process.env.LLM_MODEL||'gpt-4.1-mini',chunks:reports.length};
 }
 let queue=Promise.resolve();
 export function analyzeWithLLM(text,options={}){
+ options.onProgress?.('Analiz sıraya alındı. Önceki bir analiz varsa tamamlanması bekleniyor.');
  const result=queue.then(()=>analyzeDocument(text,options));queue=result.catch(()=>{});return result;
 }

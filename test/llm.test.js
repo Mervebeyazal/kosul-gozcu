@@ -8,3 +8,8 @@ test('model çıktısı gerçek üretim hattında alıntı doğrulamasından ge�
  }finally{globalThis.fetch=savedFetch;if(savedURL===undefined)delete process.env.LLM_URL;else process.env.LLM_URL=savedURL;if(savedKey===undefined)delete process.env.LLM_API_KEY;else process.env.LLM_API_KEY=savedKey;}
 });
 test('kanıt blokları kaynakta birebir kalır; model serbest alıntı ekleyemez',()=>{const text='A legal subscription sentence. '.repeat(100);const blocks=evidenceBlocks(text);assert.ok(blocks.every(b=>text.includes(b.text)));assert.throws(()=>resolveEvidence({uncertain:false,risks:[{category:'liability',evidence_id:0,quote:'fabricated'}]},blocks,text));});
+test('başlık kanıtı listeden çıkarılır ve belirsizlik korunur; gerçek madde kalır',()=>{
+ const text='3. GitHub May Terminate\nWe may terminate your account for breach of these terms.\n5. Amendments; Complete Agreement';
+ const r=resolveEvidence({uncertain:false,risks:[{category:'termination',evidence_id:0},{category:'termination',evidence_id:1},{category:'unilateral_change',evidence_id:2}]},evidenceBlocks(text),text);
+ assert.equal(r.risks.length,1);assert.equal(r.suppressed.length,2);assert.equal(r.score,null);assert.equal(r.uncertain,true);assert.ok(text.includes(r.risks[0].quote));
+});
