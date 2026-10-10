@@ -1,0 +1,10 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {analyzeWithLLM,evidenceBlocks,resolveEvidence} from '../src/llm.js';
+test('model çıktısı gerçek üretim hattında alıntı doğrulamasından geçer',async()=>{
+ const savedFetch=globalThis.fetch,savedURL=process.env.LLM_URL,savedKey=process.env.LLM_API_KEY;
+ process.env.LLM_URL='https://provider.example/chat';process.env.LLM_API_KEY='test-only-key';
+ const text='Your subscription will automatically renew monthly.';
+ try{globalThis.fetch=async(url,options)=>{const body=JSON.parse(options.body);assert.equal(body.response_format.json_schema.strict,true);assert.ok(!options.body.includes('test-only-key'));return {ok:true,json:async()=>({choices:[{message:{content:JSON.stringify({uncertain:false,risks:[{category:'auto_renewal',evidence_id:0}]})}}]})};};const r=await analyzeWithLLM(text);assert.equal(r.score,18);assert.equal(r.risks[0].quote,text);
+ globalThis.fetch=async()=>({ok:true,json:async()=>({choices:[{message:{content:JSON.stringify({uncertain:false,risks:[{category:'auto_renewal',evidence_id:99}]})}}]})});await assert.rejects(()=>analyzeWithLLM(text),/kanıt şeması geçersiz/);
+ }finally{globalThis.fetch=savedFetch;if(savedURL===undefined)delete process.env.LLM_URL;else process.env.LLM_URL=savedURL;if(savedKey===undefined)delete process.env.LLM_API_KEY;else process.env.LLM_API_KEY=savedKey;}
+});
+test('kanıt blokları kaynakta birebir kalır; model serbest alıntı ekleyemez',()=>{const text='A legal subscription sentence. '.repeat(100);const blocks=evidenceBlocks(text);assert.ok(blocks.every(b=>text.includes(b.text)));assert.throws(()=>resolveEvidence({uncertain:false,risks:[{category:'liability',evidence_id:0,quote:'fabricated'}]},blocks,text));});

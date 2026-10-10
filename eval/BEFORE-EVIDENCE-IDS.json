@@ -1,0 +1,53 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "at": "2026-10-10T11:08:33.847Z",
+  "scope": "24 selected clause excerpts from 5 real ToS. NOT full-document coverage evaluation. Gold locations inform excerpt selection; selection bias.",
+  "matching": "Unmatched predictions require review; they are NOT automatically false positives.",
+  "rows": [
+    {
+      "id": "github",
+      "url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "finalUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "chars": 45644,
+      "sha256": "2533fd8ad6f7820ffa7ba3c2a2ad3289dcd63534f1327304ce33f9b31f6ea8d8",
+      "capturedAt": "2026-10-10T08:36:06.343Z",
+      "error": "LLM HTTP 400: Model veya JSON şeması isteği reddedildi."
+    },
+    {
+      "id": "spotify",
+      "url": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "finalUrl": "https://www.spotify.com/us/legal/end-user-agreement/",
+      "chars": 55033,
+      "sha256": "a13a37642291f17a6e9aada8e8a83a3ee90f2191d88b1ddc37cdc5949690ae3f",
+      "capturedAt": "2026-10-10T08:36:07.438Z",
+      "error": "LLM HTTP 400: Model veya JSON şeması isteği reddedildi."
+    },
+    {
+      "id": "dropbox",
+      "url": "https://www.dropbox.com/terms",
+      "finalUrl": "https://www.dropbox.com/terms",
+      "chars": 25302,
+      "sha256": "262875d44707d89c6e0904e04092bbf6119bea37e5cbee98d724ff85e4ab61b5",
+      "capturedAt": "2026-10-10T08:36:08.938Z",
+      "error": "LLM HTTP 400: Model veya JSON şeması isteği reddedildi."
+    },
+    {
+      "id": "reddit",
+      "url": "https://redditinc.com/policies/user-agreement",
+      "finalUrl": "https://redditinc.com/policies/user-agreement",
+      "chars": 86454,
+      "sha256": "6646e7b2614454bfd7a7b9c02109eacf17986ac25f1adb4a5470c20506a8b6ab",
+      "capturedAt": "2026-10-10T08:36:12.534Z",
+      "error": "LLM HTTP 400: Model veya JSON şeması isteği reddedildi."
+    },
+    {
+      "id": "zoom",
+      "url": "https://www.zoom.com/en/trust/terms/",
+      "finalUrl": "https://www.zoom.com/en/trust/terms/?cms_guid=false",
+      "chars": 87173,
+      "sha256": "ede25cbd2cebcce8eaf326049d018a462d6f1fbf6677da6871bdca4f47408356",
+      "capturedAt": "2026-10-10T08:36:14.349Z",
+      "error": "LLM HTTP 400: Model veya JSON şeması isteği reddedildi."
+    }
+  ]
+}

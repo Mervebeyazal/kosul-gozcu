@@ -6,10 +6,11 @@
   "scripts": {
     "build": "node build.mjs",
     "start": "node --env-file-if-exists=.env server.mjs",
-    "test": "node --test test/core.test.js",
+    "test": "node --test test/core.test.js test/llm.test.js",
     "demo": "cypress run --browser chrome",
     "eval": "node eval/run.mjs",
-    "test:service": "node --test test/service.test.js"
+    "test:service": "node --test test/service.test.js",
+    "eval:llm": "node --env-file=.env eval/live.mjs --full --annotated"
   },
   "keywords": [],
   "author": "",

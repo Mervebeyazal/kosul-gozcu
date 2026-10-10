@@ -2785,7 +2785,7 @@ ${pi.pixels_above > 4 && viewportExpansion !== -1 ? `... ${pi.pixels_above} pixe
     $("export").disabled = true;
     report = null;
     $("report").replaceChildren();
-    $("status").textContent = "Kaynak ve al\u0131nt\u0131lar do\u011Frulan\u0131yor\u2026";
+    $("status").textContent = $("mode").value === "demo" ? "Kaynak ve al\u0131nt\u0131lar do\u011Frulan\u0131yor\u2026" : "Model metni analiz ediyor. Uzun metinler birka\xE7 dakika s\xFCrebilir; al\u0131nt\u0131lar tamamland\u0131\u011F\u0131nda do\u011Frulanacak.";
     try {
       const { token } = await (await fetch(base + "/session")).json();
       const response = await fetch(base + "/analyze", { method: "POST", headers: { "Content-Type": "application/json", "X-Session-Token": token }, body: JSON.stringify({ ...snapshot, mode: $("mode").value }) });

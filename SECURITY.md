@@ -15,6 +15,12 @@ Servis loopback'a bağlıdır. Host denetimi DNS rebinding yüzeyini azaltır; O
 
 ## Açık sınırlar
 
+### 10 Ekim 2026 canlı Groq güncellemesi
+
+API anahtarıyla Groq bağlantısı test edildi. Serbest alıntı üretimi gerçek sözleşmelerde değiştirilmiş alıntılara ve sağlayıcı JSON hatalarına yol açtığı için üretim hattı kanıt kimliği seçimine geçirildi. LLM `category + evidence_id` döndürür; dinamik enum + Ajv doğrulaması sonrası kod alıntıyı kaynak bloğundan kopyalar. Sonra temel rapor şeması ve birebir kaynak doğrulaması uygulanır. Geçersiz kimlik ve ek serbest alıntı alanları testte reddedilir. Bu değişiklik alıntı üretim hatasını azaltır; yanlış kategoriyi veya risk atlamayı tamamen engellemez.
+
+Groq çağrıları aynı süreç içinde sıraya alınır ve kalan token başlığına göre aralıklı yapılır. Bir parça başarısız olduğunda tamamlanmış rapor üretilmez. API anahtarı model mesajına, rapora, Git'e veya test kayıtlarına girmez. Güncel saldırı kontrolü `eval/INJECTION-LIVE.json`, gerçek metin parçaları değerlendirmesi `eval/LLM-REPORT.md` içinde; eski başarısız denemeler ayrı kayıt olarak korunur. Bu testler evrensel injection güvenliği kanıtı değildir.
+
 - Altı kategori dışındaki gizlilik riskleri tespit edilmez.
 - Tam belgelerde chunking yok; fazla metin kısmi rapor olarak gösterilir.
 - Kullanıcının fesih hakkıyla sağlayıcının fesih yetkisi karışabilir; eval bunu gösterir.

@@ -6,9 +6,9 @@ Chrome MV3 uzantısı: görünür kullanım/abonelik metnini yakalar, şemalı L
 
 - Uzantı paketi ve yerel analiz servisi hazır; build ve çekirdek testleri çalıştırıldı.
 - 5 gerçek ToS snapshot'ı üzerinde mini eval: `eval/REPORT.md`. Bu eval **demo baseline** içindir; canlı LLM evali değildir.
-- LLM anahtarı mevcut olmadığı için canlı LLM çağrısı doğrulanmadı. Alibaba demo servisi kullanılmaz.
+- Groq bağlantısı ve canlı injection denemeleri çalıştırıldı; sonuçlar eval/LLM-REPORT.md içinde. Alibaba demo servisi kullanılmaz.
 - Cypress senaryosu mutlu yol, gizli injection ve dürüst belirsizlik anını içerir. Windows çalıştırma sonucu `SECURITY.md` / `DELIVERY.md` içinde belirtilir. MP4 dosyası yoksa kayıt teslim edilmiş sayılmaz.
-- GitHub hedefi `mervebeyazal/kosul-gozcu`; uzaktan repo oluşturulması giriş gerektirir.
+- GitHub deposu: https://github.com/Mervebeyazal/kosul-gozcu. İlk CI koşusu ve ≤90sn demo video kontrolü geçti.
 
 ## Kurulum
 
@@ -51,11 +51,23 @@ Metin nav/header/footer, script/style, gizli alanlar ve form kontrollerinden ar�
 
 ## Çıktı sözleşmesi
 
-Model yalnızca `{ "uncertain": boolean, "risks": [{ "category": enum, "quote": string }] }` üretir. Ek alanlar reddedilir. Schema `src/core.js` içinde tek kaynaktır ve hem sağlayıcı hem Ajv tarafından kullanılır. Her alıntı kaynakta birebir ve kesintisiz bulunmalıdır; uydurma tek alıntı tüm raporu reddettirir. Offset'ler JavaScript UTF-16 birimleridir. Eşit alıntının ilk geçtiği yer kullanılır.
+Model yalnızca {uncertain, risks:[{category, evidence_id}]} JSON üretir. Dinamik JSON şeması kanıt kimliklerini mevcut blokların ID değerleriyle sınırlar; Ajv aynı şemayı yeniden doğrular. Model serbest alıntı veya açıklama üretemez. Kod seçilen bloğun metnini doğrudan kaynaktan kopyalar, ardından src/core.js rapor şeması ve birebir kaynak/offset doğrulamasını yapar. Kaynakta bulunmayan kimlik veya alıntı tüm raporu reddettirir. Bloklar en çok 1.200 karakterdir; parçalar arasında bağlam kaybı olabilir. Offsetler JavaScript UTF-16 birimleridir. Eşit alıntının ilk geçtiği yer kullanılır.
 
 Skor modelden alınmaz: kategori ağırlıkları 18/16/22/14/14/16, kategori başına bir kez, üst sınır 100. Skor hukuki olasılık, zarar tutarı veya hukuki geçerlilik tahmini değildir. Belirsizlik veya kısmi kapsam varsa kesin skor yoktur; gözlenen ağırlık ayrı JSON alanıdır. Türkçe açıklamalar modelin serbest metni yerine sabit, ihtiyatlı kategori açıklamalarıdır. Alıntı varlığı semantik doğruluğu ispatlamaz; bu sınır UI'da ve evalde belirtilir.
 
 ## Doğrulama
+
+### Groq canlı model testi
+
+GroqCloud için `.env.example` ayarları `https://api.groq.com/openai/v1/chat/completions` ve `openai/gpt-oss-20b` kullanır. Anahtar `.env` içinde `LLM_API_KEY` olarak tutulur. Model strict JSON schema destekler; ayrıca her sonuç yerel Ajv ve birebir alıntı doğrulamasından geçer. Servis ve eval aynı `src/llm.js` hattını kullanır.
+
+Groq metni 7.000 karakterlik parçalara böler; hız sınırını azaltmak için sağlayıcının kalan token başlığını izler; yeterli bütçe varsa kısa aralıkla, aksi halde 60 saniyelik aralıkla çağrı yapar. Tüm parçalar başarılı olmadan tamamlanmış rapor göstermez. Tek parça başarısızsa tüm analiz reddedilir. Parça sınırları bağlamı bölebilir; bağımsız hukuki yorum garanti edilmez. Uzun metinler birkaç dakika sürebilir. Fazla sonuç veya kısmi kaynak kesin skor üretmez.
+
+```powershell
+npm run eval:llm
+```
+
+Bu komut canlı modelle dört injection/belirsizlik kontrolü ve beş gerçek ToS'tan seçilmiş, gold konumları bilinen madde parçalarını analiz eder. Tam belge recall ölçümü değildir; seçim yanlılığı vardır. Sonuçlar `eval/LLM-REPORT.md`, `eval/LLM-RESULTS.json`, `eval/INJECTION-LIVE.json` içinde tutulur. Eşleşmeyen tahminler otomatik yanlış alarm değildir; metin bazında inceleme gerekir. Tam belge denemesi için `node --env-file=.env eval/live.mjs --full` kullanılabilir; çok sayıda API çağrısı yapar.
 
 ```powershell
 npm test
@@ -79,4 +91,4 @@ git remote add origin https://github.com/mervebeyazal/kosul-gozcu.git
 git push -u origin main
 ```
 
-Canlı LLM mini evali, gerçek LLM ile prompt injection denemesi, bağımsız gold anotasyon ve Chrome'da uzantı kabul testi tamamlanmadan üretim için hazır sayılmamalıdır. Gizlilik metinlerinde veri satışı, sınır ötesi aktarım ve saklama süresi kategorileri bu MVP'de bulunmaz.
+Tam belge coverage evali, bağımsız gold anotasyon ve Chrome'da uzantı kabul testi tamamlanmadan üretim için hazır sayılmamalıdır. Gizlilik metinlerinde veri satışı, sınır ötesi aktarım ve saklama süresi kategorileri bu MVP'de bulunmaz.

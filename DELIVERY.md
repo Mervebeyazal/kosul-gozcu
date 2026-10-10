@@ -1,5 +1,15 @@
 # Teslim kayıtları — 10 Ekim 2026
 
+## Güncel durum — Groq bağlantısı sonrası
+
+Repo oluşturuldu ve ilk kod yüklemesi yapıldı: https://github.com/Mervebeyazal/kosul-gozcu. İlk CI koşusundaki derleme, çekirdek/HTTP testleri, baseline eval, Cypress senaryosu, video kaydı ve ≤90sn kontrolü başarılı: https://github.com/Mervebeyazal/kosul-gozcu/actions/runs/38044094745.
+
+Groq API anahtarı yerel ortamda yapılandırıldı. Canlı injection/belirsizlik kontrolleri yapıldı; kanıt kimliği seçimi hattında dört kontrol geçti. Gerçek beş ToS'tan seçilen parçalar üzerinde canlı mini eval tamamlandı: 18/24 çapa yakalandı, 6 kaçırıldı; ek tahmin incelemesinde 9 yanlış/yetersiz kanıt ve 7 desteklenen ek bulgu bulundu. Ayrıntılar `eval/LIVE-SUMMARY.md`. Altı yerel birim testi geçti. Bu yeni değişiklikler yerelde hazırlanmıştır; GitHub'a ayrıca push edilmelidir.
+
+Kalan: Chrome MV3 uzantısının kullanıcı tarafından yüklenmesi ve gerçek sayfa kabul testi; yeni sürüm CI/video kontrolü; tam belge LLM coverage ve bağımsız gold değerlendirmesi. Anahtar Git'e dahil edilmez.
+
+Aşağıdaki bölümler ilk teslimin tarihsel kayıtlarıdır; güncel durum yukarıdadır.
+
 ## Mevcut
 
 - Kaynak kod, yerel Git deposu, README mimari ve veri akışı.
